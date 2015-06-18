@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Gerenciador de Vendas</title>
+    </h:head>
+    <h:body>
+        <h1>Gerenciador de Vendas</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+            Telefone: <p:inputText value="#{clienteController.cliente.telefone}"/><br/>
+            Endereco: <p:inputText value="#{clienteController.cliente.endereco}"/><br/>
+            Email:    <p:inputText value="#{clienteController.cliente.email}"/><br/>
+            Nome:     <p:inputText value="#{clienteController.cliente.nome}"/><br/>
+            CPF:      <p:inputText value="#{clienteController.cliente.cpf}"/><br/>
+            CNPJ:     <p:inputText value="#{clienteController.cliente.cnpj}"/><br/>
+            Razao Social:<p:inputText value="#{clienteController.cliente.razaosocial}"/><br/>
+            Avaliação: <h:selectOneMenu value="#{clienteController.cliente.avaliacao}">
+                <f:selectItem itemLabel="1" itemValue="1"/>
+                <f:selectItem itemLabel="2" itemValue="2"/>
+                <f:selectItem itemLabel="3" itemValue="3"/>
+                <f:selectItem itemLabel="4" itemValue="4"/>
+                <f:selectItem itemLabel="5" itemValue="5"/>
+            </h:selectOneMenu><br/>
+            </h:panelGrid>
+            <h:commandButton action="#{clienteController.adicionarCliente}" value="Inserir Novo Cliente"/>
+            <h:commandButton action="#{clienteController.alterarCliente}" value="Alterar Cliente"/>
+            <br/>
+            <h:commandLink action="index" value="Voltar"/>
+        </h:form>
+    </h:body>
+</html>
